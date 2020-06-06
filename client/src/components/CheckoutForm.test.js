@@ -56,10 +56,15 @@ test("form shows success message on submit with form details", () => {
 
   //success message
 
-  const successMsg = screen.getByTestId(/successMessage/i);
   expect(successMsg).toBeInTheDocument();
 
   //re-render
 
   //   renderIntoDocument(<CheckoutForm />);
+});
+
+test("renders without crashing", () => {
+  const div = document.createElement("div");
+  ReactDOM.render(<App />, div);
+  ReactDOM.unmountComponentAtNode(div);
 });
