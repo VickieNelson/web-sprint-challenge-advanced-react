@@ -1,6 +1,8 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { render, screen, fireEvent, getByText } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
+import App from "../App";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
@@ -56,6 +58,7 @@ test("form shows success message on submit with form details", () => {
 
   //success message
 
+  const successMsg = screen.getByTestId(/successMessage/i);
   expect(successMsg).toBeInTheDocument();
 
   //re-render
